@@ -1,26 +1,100 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #EEE8D0;
   --foreground: #171717;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #EEE8D0;
+  --color-black: #171717;
+  --color-white: #FFFFFF;
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Custom animations */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Logo hover effect */
+.client-logo {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(100%) brightness(0.8);
+}
+
+.client-logo:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.15);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Elegant Scrollbar */
+.elegant-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.elegant-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 0 2rem;
+}
+
+.elegant-scroll::-webkit-scrollbar-thumb {
+  background: #171717;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.elegant-scroll::-webkit-scrollbar-thumb:hover {
+  background: #2a2a2a;
+}
+
+.elegant-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #171717 transparent;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+/* Modal Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out;
 }
