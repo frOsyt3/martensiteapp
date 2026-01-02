@@ -203,6 +203,29 @@ export default function Home() {
                 </Link>
               </motion.div>
             </motion.div>
+
+            {/* Martensite Archives Section */}
+            <motion.div
+              className="mt-12"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+            >
+              <h2 className="text-xl font-bold text-black mb-2">
+                Martensite Archives
+              </h2>
+              <p className="text-black mb-2">
+                We have several products. We made special pants that are available in limited stock and limited sizes.
+              </p>
+              <p className="text-black mb-4">
+                If you would like to order a different size or request a custom size, please contact us through our "Contact Us" page.
+              </p>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link href="/archive" className="inline-block px-6 py-2 border-2 border-black rounded-lg font-semibold text-black hover:bg-primary transition">
+                  ARCHIVES
+                </Link>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -328,17 +351,33 @@ export default function Home() {
 
       {/* About Us Section */}
       <section className="bg-[#ededed] py-20">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start gap-8">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start gap-8">
           {/* Kiri: Teks */}
-          <div className="w-full md:w-1/2 flex flex-col justify-center mb-10 md:mb-0">
+          <div className="w-full md:w-2/3 flex flex-col justify-center mb-10 md:mb-0">
             <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">ABOUT US</h2>
-            <p className="text-black mb-6">Martensite is the ideal solution for a new apparel brand looking to produce on a small scale – with a minimum order of just 24 pieces per article..</p>
-            <button className="px-5 py-2 border border-black rounded-full text-sm font-semibold hover:bg-primary hover:text-black transition w-max">
+            <div className="space-y-4 text-black text-sm mb-6">
+              <p>
+                <strong>Martensite Workwear</strong> is a specialized pants manufacturing workshop created to support local brands in developing their best ideas and designs through small-scale production, starting from a minimum quantity of only 24 pieces.
+              </p>
+              <p>
+                We provide a solution for local brands that have difficulty finding pants manufacturers willing to produce in small quantities, and for those who need assistance in transforming creative ideas into finished, market-ready products.
+              </p>
+              <p>
+                Martensite Workwear is here as your trusted garment production partner — helping you realize your concepts, designs, and product development with the best results, supported by strict quality control procedures.
+              </p>
+              <p>
+                Simply contact us and share your design ideas or mockups. We will then discuss material selection, production processes, and timelines until your product is completed.
+              </p>
+              <p>
+                We are passionate about supporting local brands and helping them grow into well-known brands in Indonesia and beyond.
+              </p>
+            </div>
+            {/* <button className="px-5 py-2 border border-black rounded-full text-sm font-semibold hover:bg-primary hover:text-black transition w-max">
               Selengkapnya
-            </button>
+            </button> */}
           </div>
           {/* Kanan: Lingkaran Dekorasi */}
-          <div className="w-full md:w-1/2 flex items-center justify-center relative min-h-[260px] md:min-h-[320px]">
+          <div className="w-full md:w-1/3 flex items-center justify-center relative min-h-[260px] md:min-h-[320px]">
             {/* Lingkaran Hitam */}
             <div className="absolute right-0 top-1/3 rounded-full bg-black w-36 h-36 md:w-48 md:h-48 z-0"></div>
             {/* Lingkaran Krem */}
@@ -427,42 +466,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Us Section */}
+      {/* Archives Section */}
       <section className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          {/* Kiri: Contact Info */}
-          <div>
-            <h3 className="text-lg md:text-xl font-bold text-black mb-4">CONTACT INFORMATION</h3>
-            <p className="mb-6 text-black">Get in touch with us for the best solution tailored to your product plan.</p>
-            <div className="flex items-center space-x-3 mb-3 text-black">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5zm0 1.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5A4.25 4.25 0 0 1 16.25 20.5h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5zm4.25 2.75a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm0 1.5a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zm0 6.25c-2.07 0-6.25 1.04-6.25 3.12v1.13c0 .41.34.75.75.75h11c.41 0 .75-.34.75-.75v-1.13c0-2.08-4.18-3.12-6.25-3.12z"/>
-              </svg>
-              <span>@martensite.id</span>
-            </div>
-            <div className="flex items-center space-x-3 mb-3 text-black">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.h2 
+            className="text-3xl font-bold text-center text-black mb-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Archives
+          </motion.h2>
+          <motion.div 
+            className="w-24 h-1 bg-black mx-auto mb-10 rounded-full"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          ></motion.div>
+          <motion.div 
+            className="flex space-x-6 justify-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.2
+                }
+              }
+            }}
+          >
+            {/* Archive Cards */}
+            {[
+              { name: 'Archive Item 1', image: '/assets/img/product/soulevebsh.jpg' },
+              { name: 'Archive Item 2', image: '/assets/img/product/lamerenceb.jpeg' },
+              { name: 'Archive Item 3', image: '/assets/img/product/lamerencej.jpeg' }
+            ].map((item, index) => (
+              <motion.div 
+                key={index} 
+                className="min-w-[220px] bg-gray-100 rounded-xl shadow p-6 flex flex-col items-center"
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image 
+                    src={item.image} 
+                    alt={item.name} 
+                    width={160}
+                    height={160}
+                    className="h-40 w-40 object-cover mb-4 rounded-lg"
+                  />
+                </motion.div>
+                <h3 className="text-lg font-bold text-black mb-2">{item.name}</h3>
+              </motion.div>
+            ))}
+          </motion.div>
+          <div className="flex justify-center mt-8">
+            <a 
+              href="https://wa.me/6285777557575" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-full font-semibold text-base shadow hover:bg-[#232323] transition"
+            >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 10.75c0 6.25 8.25 10.5 8.25 10.5s8.25-4.25 8.25-10.5A8.25 8.25 0 0 0 12 2.5a8.25 8.25 0 0 0-8.25 8.25z"/>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5zm0 12a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2zm12-12a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V5zm0 12a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-2z"/>
               </svg>
-              <span>+6285777557575</span>
-            </div>
-            <div className="flex items-center space-x-3 mb-3 text-black">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-1.4 3l-6.6 5.25L5.4 7H18.6zM4 18V8.25l7.2 5.7a1 1 0 0 0 1.2 0l7.2-5.7V18H4z"/>
-              </svg>
-              <span>martensiteworkwear@gmail.com</span>
-            </div>
-          </div>
-          {/* Kanan: Contact Form */}
-          <div>
-            <h3 className="text-lg md:text-xl font-bold text-black mb-4">CONTACT FORM</h3>
-            <p className="mb-4 text-black">isi form dibawah ini untuk menghubungi admin via email.</p>
-            <form className="space-y-4">
-              <input type="text" placeholder="Nama Anda (Wajib)...." className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none" />
-              <input type="email" placeholder="Email Anda (Wajib)...." className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none" />
-              <textarea rows={4} placeholder="Pesan (Wajib)...." className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none"></textarea>
-              <button type="submit" className="px-6 py-2 bg-black text-white rounded-full font-bold hover:bg-[#232323] transition">Send</button>
-            </form>
+              Contact Us
+            </a>
           </div>
         </div>
       </section>

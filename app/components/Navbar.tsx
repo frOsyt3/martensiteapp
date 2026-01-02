@@ -13,12 +13,12 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/profile', label: 'Profile' },
-    { href: '/portfolio', label: 'Portfolio' },
-    { href: '/services', label: 'Services' },
-    { href: '/archive', label: 'Archive' },
-    { href: '/contact', label: 'Contact Us' },
+    { href: '/', label: 'HOME' },
+    { href: '/profile', label: 'PROFILE' },
+    { href: '/portfolio', label: 'PORTFOLIO' },
+    { href: '/services', label: 'SERVICES' },
+    { href: '/archive', label: 'ARCHIVE' },
+    { href: '/contact', label: 'CONTACT US' },
   ];
 
   // Scroll detection

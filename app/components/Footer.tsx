@@ -18,9 +18,9 @@ export default function Footer() {
             <span className="text-xl font-bold">Martensite</span>
           </div>
           <p className="text-sm leading-relaxed">
-            Martensite is the ideal solution for a new apparel brand looking to produce on a small scale – with a minimum order of just 24 pieces per article.
+            At Martensite Workwear, we believe that every local brand has the potential to grow into a well-known brand — both in Indonesia and globally.
             <br /><br />
-            We specialize in pants and workwear, providing quality products at competitive prices while supporting local brands.
+            We are proud to be part of your journey by delivering production excellence, consistency, and reliability in every product we create.
           </p>
         </div>
 
