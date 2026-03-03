@@ -8,9 +8,9 @@ import { useState, useEffect } from 'react';
 export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const heroImages = [
-    '/assets/img/hero/jeans1.png',
-    '/assets/img/hero/jeans2.png',
-    '/assets/img/hero/jeans3.png'
+    '/assets/img/product/chmbpants1.jpeg',
+    '/assets/img/product/lamerenceb.jpeg',
+    '/assets/img/product/soulevebsh.jpg'
   ];
 
   // Auto-rotate images every 4 seconds
@@ -31,7 +31,7 @@ export default function Home() {
             <motion.div
               key={currentImageIndex}
               initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 0.50, scale: 1 }}
+              animate={{ opacity: 0.35, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 1, ease: "easeInOut" }}
               className="absolute inset-0"
@@ -40,9 +40,12 @@ export default function Home() {
                 src={heroImages[currentImageIndex]}
                 alt={`Hero ${currentImageIndex + 1}`}
                 fill
-                className="object-cover object-center"
+                className="object-cover"
+                style={{ objectPosition: '35% 40%' }}
                 priority
               />
+              {/* Subtle overlay untuk meningkatkan kontras teks */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-transparent"></div>
             </motion.div>
           </AnimatePresence>
         </div>
