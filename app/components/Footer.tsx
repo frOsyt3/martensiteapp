@@ -75,7 +75,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gray-300 mt-8 pt-4 text-xs text-center text-black/80">
-        &copy; {new Date().getFullYear()} Martensite - Reka Buaya Manufacture
+        &copy; {new Date().getFullYear()} Martensite Workwear
       </div>
     </footer>
   );
