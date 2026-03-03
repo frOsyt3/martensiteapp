@@ -85,7 +85,7 @@ export default function Navbar() {
 
   return (
     <nav className={`sticky top-0 left-0 w-full z-50 border-b transition-all duration-1000 ease-in-out ${
-      scrolled 
+      scrolled && !isMenuOpen
         ? 'bg-transparent border-transparent shadow-none translate-y-0 opacity-0 pointer-events-none' 
         : 'bg-primary border-black/10 shadow-sm translate-y-0 opacity-100'
     }`}>

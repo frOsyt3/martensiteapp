@@ -377,11 +377,11 @@ export default function Home() {
             </button> */}
           </div>
           {/* Kanan: Lingkaran Dekorasi */}
-          <div className="w-full md:w-1/3 flex items-center justify-center relative min-h-[260px] md:min-h-[320px]">
+          <div className="hidden md:flex w-full md:w-1/3 items-center justify-center relative min-h-[260px] md:min-h-[320px] overflow-hidden">
             {/* Lingkaran Hitam */}
-            <div className="absolute right-0 top-1/3 rounded-full bg-black w-36 h-36 md:w-48 md:h-48 z-0"></div>
+            <div className="absolute right-4 top-1/3 rounded-full bg-black w-36 h-36 md:w-48 md:h-48 z-0"></div>
             {/* Lingkaran Krem */}
-            <div className="absolute left-2/3 bottom-0 rounded-full bg-[#EEE8D0] w-20 h-20 md:w-28 md:h-28 z-20"></div>
+            <div className="absolute right-20 bottom-4 rounded-full bg-[#EEE8D0] w-20 h-20 md:w-28 md:h-28 z-20"></div>
           </div>
         </div>
       </section>
@@ -406,7 +406,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
           ></motion.div>
           <motion.div 
-            className="flex space-x-6 justify-center"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -427,7 +427,7 @@ export default function Home() {
             ].map((service, index) => (
               <motion.div 
                 key={index} 
-                className="min-w-[220px] bg-white rounded-xl shadow p-6 flex flex-col items-center"
+                className="w-full max-w-[280px] bg-white rounded-xl shadow p-6 flex flex-col items-center"
                 variants={{
                   hidden: { opacity: 0, y: 40 },
                   visible: { opacity: 1, y: 0 }
@@ -467,8 +467,8 @@ export default function Home() {
       </section>
 
       {/* Archives Section */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="bg-white py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 overflow-hidden">
           <motion.h2 
             className="text-3xl font-bold text-center text-black mb-2"
             initial={{ opacity: 0, y: 20 }}
@@ -485,8 +485,55 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           ></motion.div>
+          {/* Mobile - Horizontal Scroll */}
+          {/* Gallery temporarily hidden
+          <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 elegant-scroll">
+            <motion.div 
+              className="flex space-x-4"
+              style={{ width: 'max-content' }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.2
+                  }
+                }
+              }}
+            >
+              {[
+                { name: 'Archive Item 1', image: '/assets/img/product/soulevebsh.jpg' },
+                { name: 'Archive Item 2', image: '/assets/img/product/lamerenceb.jpeg' },
+                { name: 'Archive Item 3', image: '/assets/img/product/lamerencej.jpeg' }
+              ].map((item, index) => (
+                <motion.div 
+                  key={index} 
+                  className="w-[180px] flex-shrink-0 bg-gray-100 rounded-xl shadow p-4 flex flex-col items-center"
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                >
+                  <Image 
+                    src={item.image} 
+                    alt={item.name} 
+                    width={140}
+                    height={140}
+                    className="h-32 w-32 object-cover mb-3 rounded-lg"
+                  />
+                  <h3 className="text-base font-bold text-black">{item.name}</h3>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+          */}
+
+          {/* Desktop - Grid */}
+          {/* Gallery temporarily hidden
           <motion.div 
-            className="flex space-x-6 justify-center"
+            className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -499,7 +546,6 @@ export default function Home() {
               }
             }}
           >
-            {/* Archive Cards */}
             {[
               { name: 'Archive Item 1', image: '/assets/img/product/soulevebsh.jpg' },
               { name: 'Archive Item 2', image: '/assets/img/product/lamerenceb.jpeg' },
@@ -507,7 +553,7 @@ export default function Home() {
             ].map((item, index) => (
               <motion.div 
                 key={index} 
-                className="min-w-[220px] bg-gray-100 rounded-xl shadow p-6 flex flex-col items-center"
+                className="w-full max-w-[280px] bg-gray-100 rounded-xl shadow p-6 flex flex-col items-center"
                 variants={{
                   hidden: { opacity: 0, y: 40 },
                   visible: { opacity: 1, y: 0 }
@@ -530,6 +576,12 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+          */}
+
+          {/* Coming Soon Placeholder */}
+          <div className="text-center py-12">
+            <p className="text-black/60 text-lg">Coming Soon</p>
+          </div>
           <div className="flex justify-center mt-8">
             <a 
               href="https://wa.me/6285777557575" 

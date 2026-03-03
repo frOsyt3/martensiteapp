@@ -24,31 +24,23 @@ export default function Portfolio() {
   const portfolioItems: PortfolioItem[] = [
     {
       id: 1,
-      title: "LAMERENCE",
-      image: "/assets/img/product/lamerencelogo.jpg",
-      description: "Koleksi premium workwear dengan desain modern dan material berkualitas tinggi. LAMERENCE menghadirkan kombinasi sempurna antara style dan functionality untuk kebutuhan profesional Anda.",
-      category: "Premium Workwear",
+      title: "CHMB",
+      image: "/assets/img/product/chmblogo.jpg",
+      description: "Koleksi workwear dengan sentuhan streetwear contemporary. CHMB menghadirkan gaya kasual yang tetap profesional, cocok untuk berbagai occasion dan environment.",
+      category: "Contemporary Casual",
       year: "2024",
       galleryImages: [
         {
-          image: "/assets/img/product/lamerencelogo.jpg",
-          description: "Logo LAMERENCE dengan desain minimalis yang mencerminkan brand identity yang kuat dan profesional."
+          image: "/assets/img/product/chmblogo.jpg",
+          description: "Logo CHMB dengan aesthetic streetwear modern, perfect balance antara casual dan professional look."
         },
         {
-          image: "/assets/img/product/lamerenceb.jpeg",
-          description: "Baggy Pants LAMERENCE dengan material premium, nyaman dipakai seharian dengan detail stitching yang rapi."
+          image: "/assets/img/product/chmbpants1.jpeg",
+          description: "CHMB Baggy Pants dengan logo khas di bagian depan, material denim berkualitas tinggi dengan cutting relaxed fit."
         },
         {
-          image: "/assets/img/product/lamerenceb2.jpeg",
-          description: "Detail baggy pants dengan pocket fungsional dan aksen logo yang subtle namun tetap terlihat elegan."
-        },
-        {
-          image: "/assets/img/product/lamerencej.jpeg",
-          description: "Jorts Pants LAMERENCE perfect untuk casual outing, kombinasi denim berkualitas dengan cutting modern."
-        },
-        {
-          image: "/assets/img/product/lamerencej2.jpeg",
-          description: "Detail finishing jorts dengan washing effect yang natural, menambah karakter vintage pada produk."
+          image: "/assets/img/product/chmbpants2.jpeg",
+          description: "Detail belakang CHMB Pants dengan aksen star patch di kedua saku, finishing premium dan jahitan rapi."
         }
       ]
     },
@@ -76,15 +68,31 @@ export default function Portfolio() {
     },
     {
       id: 3,
-      title: "CHMB",
-      image: "/assets/img/product/chmblogo.jpg",
-      description: "Koleksi workwear dengan sentuhan streetwear contemporary. CHMB menghadirkan gaya kasual yang tetap profesional, cocok untuk berbagai occasion dan environment.",
-      category: "Contemporary Casual",
+      title: "LAMERENCE",
+      image: "/assets/img/product/lamerencelogo.jpg",
+      description: "Koleksi premium workwear dengan desain modern dan material berkualitas tinggi. LAMERENCE menghadirkan kombinasi sempurna antara style dan functionality untuk kebutuhan profesional Anda.",
+      category: "Premium Workwear",
       year: "2024",
       galleryImages: [
         {
-          image: "/assets/img/product/chmblogo.jpg",
-          description: "Logo CHMB dengan aesthetic streetwear modern, perfect balance antara casual dan professional look."
+          image: "/assets/img/product/lamerencelogo.jpg",
+          description: "Logo LAMERENCE dengan desain minimalis yang mencerminkan brand identity yang kuat dan profesional."
+        },
+        {
+          image: "/assets/img/product/lamerenceb.jpeg",
+          description: "Baggy Pants LAMERENCE dengan material premium, nyaman dipakai seharian dengan detail stitching yang rapi."
+        },
+        {
+          image: "/assets/img/product/lamerenceb2.jpeg",
+          description: "Detail baggy pants dengan pocket fungsional dan aksen logo yang subtle namun tetap terlihat elegan."
+        },
+        {
+          image: "/assets/img/product/lamerencej.jpeg",
+          description: "Jorts Pants LAMERENCE perfect untuk casual outing, kombinasi denim berkualitas dengan cutting modern."
+        },
+        {
+          image: "/assets/img/product/lamerencej2.jpeg",
+          description: "Detail finishing jorts dengan washing effect yang natural, menambah karakter vintage pada produk."
         }
       ]
     }
@@ -140,7 +148,7 @@ export default function Portfolio() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl font-bold text-black mb-2">Portfolio</h1>
-            <h2 className="text-2xl font-bold text-black">PORTFOLIO</h2>
+            <div className="w-24 h-1 bg-black mx-auto rounded-full"></div>
           </motion.div>
           
           {/* Grid Portfolio */}
