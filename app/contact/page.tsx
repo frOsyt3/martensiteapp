@@ -10,26 +10,26 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="bg-gray-200 rounded-2xl shadow p-6">
                 <h3 className="font-bold mb-2">Professional Team</h3>
-                <p className="text-black/80 text-sm">Tim kami berpengalaman dan berdedikasi untuk memberikan solusi terbaik bagi setiap klien.</p>
+                <p className="text-black/80 text-sm">Our experienced team stays up to date with the latest fashion trends and is committed to providing the best solutions for your products.</p>
               </div>
               <div className="bg-gray-200 rounded-2xl shadow p-6">
-                <h3 className="font-bold mb-2">Quality Assurance</h3>
-                <p className="text-black/80 text-sm">Kami selalu menjaga kualitas hasil kerja dengan standar tinggi dan proses yang teruji.</p>
+                <h3 className="font-bold mb-2">Customer-Focused</h3>
+                <p className="text-black/80 text-sm">Our customers are our top priority. We are flexible and ready to adapt to your specific needs.</p>
               </div>
               <div className="bg-gray-200 rounded-2xl shadow p-6">
-                <h3 className="font-bold mb-2">Customer Focused</h3>
-                <p className="text-black/80 text-sm">Kepuasan pelanggan adalah prioritas utama, kami siap mendengar dan menyesuaikan kebutuhan Anda.</p>
+                <h3 className="font-bold mb-2">Quality-Oriented</h3>
+                <p className="text-black/80 text-sm">We ensure excellence in every step of the production process by using grade A materials, along with precise embroidery and screen printing.</p>
               </div>
               <div className="bg-gray-200 rounded-2xl shadow p-6">
-                <h3 className="font-bold mb-2">Affordable & Transparent</h3>
-                <p className="text-black/80 text-sm">Harga kompetitif, transparan, tanpa biaya tersembunyi, dan layanan after sales yang responsif.</p>
+                <h3 className="font-bold mb-2">Affordable Price</h3>
+                <p className="text-black/80 text-sm">We offer competitive prices while proudly supporting local brands and a new apparel brand.</p>
               </div>
             </div>
           </div>
           {/* Kanan: CTA & Info */}
           <div className="w-full md:w-1/3 flex flex-col justify-center items-start mt-10 md:mt-0">
             <h3 className="text-lg md:text-xl font-bold text-black mb-2">INTERESTED TO WORKING TOGETHER?</h3>
-            <p className="text-black/80 mb-6 text-sm">Ukuran standar website desktop yang umum digunakan adalah 1920×1080 piksel (Full HD) atau 1366×768 piksel. Namun, banyak situs web modern juga menggunakan wadah (container) berukuran 1200-1440 piksel untuk.</p>
+            <p className="text-black/80 mb-6 text-sm">Send us your product plan and we will provide the best solution at the most competitive prices.</p>
             <a href="https://wa.me/6285777557575" target="_blank" rel="noopener noreferrer" className="px-8 py-2 bg-gray-200 rounded-lg font-bold text-black shadow hover:bg-white transition">ORDER NOW</a>
           </div>
         </div>
@@ -41,7 +41,7 @@ export default function Contact() {
           {/* Kiri: Contact Info */}
           <div>
             <h3 className="text-lg md:text-xl font-bold text-black mb-4">CONTACT INFORMATION</h3>
-            <p className="mb-6 text-black">Silahkan hubungi kami untuk konsultasi mengenasi jasa kami.</p>
+            <p className="mb-6 text-black">Please contact us to explore our services and develop your ideas together.</p>
             <div className="flex items-center space-x-3 mb-3 text-black">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>

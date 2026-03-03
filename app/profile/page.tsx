@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Profile() {
   return (
     <div className="min-h-screen">
@@ -37,13 +39,23 @@ export default function Profile() {
             </div>
           </div>
           
-          {/* Kanan: Placeholder Images */}
+          {/* Kanan: Profile Images */}
           <div className="w-full space-y-6">
-            <div className="bg-gray-200 rounded-2xl h-64 w-full flex items-center justify-center">
-              <span className="text-gray-500">Image Placeholder 1</span>
+            <div className="bg-white rounded-2xl overflow-hidden h-80 w-full relative border border-gray-200">
+              <Image 
+                src="/assets/img/profile/profile1.jpeg" 
+                alt="Martensite Profile 1" 
+                fill
+                className="object-contain"
+              />
             </div>
-            <div className="bg-gray-200 rounded-2xl h-64 w-full flex items-center justify-center">
-              <span className="text-gray-500">Image Placeholder 2</span>
+            <div className="bg-black rounded-2xl overflow-hidden h-80 w-full relative">
+              <Image 
+                src="/assets/img/profile/profile2.jpeg" 
+                alt="Martensite Profile 2" 
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
         </div>

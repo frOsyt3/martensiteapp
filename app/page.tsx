@@ -277,7 +277,7 @@ export default function Home() {
                 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
-                <h3 className="font-bold mb-2">Customer-Focusede</h3>
+                <h3 className="font-bold mb-2">Customer-Focused</h3>
                 <p className="text-black/80 text-sm">Our customers are our top priority. We are flexible and ready to adapt to your specific needs.</p>
               </motion.div>
               <motion.div 
