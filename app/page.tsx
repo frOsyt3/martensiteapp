@@ -13,11 +13,11 @@ export default function Home() {
     '/assets/img/product/soulevebsh.jpg'
   ];
 
-  // Auto-rotate images every 4 seconds
+  // Auto-rotate images every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    },6000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
@@ -33,7 +33,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 1.1 }}
               animate={{ opacity: 0.35, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 1, ease: "easeInOut" }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
               className="absolute inset-0"
             >
               <Image
@@ -390,8 +390,8 @@ export default function Home() {
       </section>
 
       {/* Our Service Section */}
-      <section className="bg-[#EEE8D0] py-20">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="bg-[#EEE8D0] py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 overflow-hidden">
           <motion.h2 
             className="text-3xl font-bold text-center text-black mb-2"
             initial={{ opacity: 0, y: 20 }}
@@ -408,8 +408,53 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           ></motion.div>
+          
+          {/* Mobile - Horizontal Scroll */}
+          <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 elegant-scroll">
+            <motion.div 
+              className="flex space-x-4"
+              style={{ width: 'max-content' }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.2
+                  }
+                }
+              }}
+            >
+              {[
+                { name: 'Board Short', image: '/assets/img/product/soulevebsh.jpg' },
+                { name: 'Baggy Pants', image: '/assets/img/product/chmbpants1.jpeg' },
+                { name: 'Jorts Pants', image: '/assets/img/product/lamerencej.jpeg' }
+              ].map((service, index) => (
+                <motion.div 
+                  key={index} 
+                  className="w-[220px] flex-shrink-0 bg-white rounded-xl shadow p-6 flex flex-col items-center"
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                >
+                  <Image 
+                    src={service.image} 
+                    alt={service.name} 
+                    width={160}
+                    height={160}
+                    className="h-36 w-36 object-cover mb-4 rounded-lg"
+                  />
+                  <h3 className="text-base font-bold text-black text-center">{service.name}</h3>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Desktop - Grid */}
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
+            className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -425,7 +470,7 @@ export default function Home() {
             {/* Service Cards */}
             {[
               { name: 'Board Short', image: '/assets/img/product/soulevebsh.jpg' },
-              { name: 'Baggy Pants', image: '/assets/img/product/lamerenceb.jpeg' },
+              { name: 'Baggy Pants', image: '/assets/img/product/chmbpants1.jpeg' },
               { name: 'Jorts Pants', image: '/assets/img/product/lamerencej.jpeg' }
             ].map((service, index) => (
               <motion.div 
@@ -453,6 +498,7 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+          
           <div className="flex justify-center mt-8">
             <a 
               href="https://wa.me/6285777557575" 
