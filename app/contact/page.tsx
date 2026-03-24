@@ -1,4 +1,28 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Contact() {
+  const [nama, setNama] = useState("");
+  const [email, setEmail] = useState("");
+  const [pesan, setPesan] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!nama.trim() || !email.trim() || !pesan.trim()) {
+      alert("Semua field wajib diisi!");
+      return;
+    }
+
+    const message = `Halo, saya *${nama}* (${email}).\n\n${pesan}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappNumber = "6285777557575";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <div className="min-h-screen">
       {/* Why Choose Us Section */}
@@ -64,12 +88,35 @@ export default function Contact() {
           {/* Kanan: Contact Form */}
           <div>
             <h3 className="text-lg md:text-xl font-bold text-black mb-4">CONTACT FORM</h3>
-            <p className="mb-4 text-black">isi form dibawah ini untuk menghubungi admin via email.</p>
-            <form className="space-y-4">
-              <input type="text" placeholder="Nama Anda (Wajib)...." className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none" />
-              <input type="email" placeholder="Email Anda (Wajib)...." className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none" />
-              <textarea rows={4} placeholder="Pesan (Wajib)...." className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none"></textarea>
-              <button type="submit" className="px-6 py-2 bg-black text-white rounded-full font-bold hover:bg-[#232323] transition">Send</button>
+            <p className="mb-4 text-black">Isi form dibawah ini untuk menghubungi admin via WhatsApp.</p>
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Nama Anda (Wajib)...."
+                value={nama}
+                onChange={(e) => setNama(e.target.value)}
+                className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none"
+              />
+              <input
+                type="email"
+                placeholder="Email Anda (Wajib)...."
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none"
+              />
+              <textarea
+                rows={4}
+                placeholder="Pesan (Wajib)...."
+                value={pesan}
+                onChange={(e) => setPesan(e.target.value)}
+                className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="px-6 py-2 bg-black text-white rounded-full font-bold hover:bg-[#232323] transition"
+              >
+                Send
+              </button>
             </form>
           </div>
         </div>

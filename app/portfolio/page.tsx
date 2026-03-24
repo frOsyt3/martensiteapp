@@ -119,20 +119,21 @@ export default function Portfolio() {
     }
   }, [selectedItem]);
 
+  // productImages excludes the logo (index 0) — used inside modal
+  const productImages = selectedItem
+    ? selectedItem.galleryImages.slice(1)
+    : [];
+
   const handleNext = () => {
-    if (selectedItem) {
-      setCurrentImageIndex((prev) => 
-        prev === selectedItem.galleryImages.length - 1 ? 0 : prev + 1
-      );
-    }
+    setCurrentImageIndex((prev) =>
+      prev === productImages.length - 1 ? 0 : prev + 1
+    );
   };
 
   const handlePrev = () => {
-    if (selectedItem) {
-      setCurrentImageIndex((prev) => 
-        prev === 0 ? selectedItem.galleryImages.length - 1 : prev - 1
-      );
-    }
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? productImages.length - 1 : prev - 1
+    );
   };
 
   return (
@@ -259,7 +260,7 @@ export default function Portfolio() {
                     className="w-full h-full"
                   >
                     <Image
-                      src={selectedItem.galleryImages[currentImageIndex].image}
+                      src={productImages[currentImageIndex].image}
                       alt={`${selectedItem.title} - ${currentImageIndex + 1}`}
                       width={800}
                       height={600}
@@ -268,8 +269,8 @@ export default function Portfolio() {
                   </motion.div>
                 </AnimatePresence>
                 
-                {/* Navigation Arrows - only show if more than 1 image */}
-                {selectedItem.galleryImages.length > 1 && (
+                {/* Navigation Arrows - only show if more than 1 product image */}
+                {productImages.length > 1 && (
                   <>
                     <motion.button
                       onClick={handlePrev}
@@ -295,9 +296,9 @@ export default function Portfolio() {
                 )}
 
                 {/* Image Counter */}
-                {selectedItem.galleryImages.length > 1 && (
+                {productImages.length > 1 && (
                   <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
-                    {currentImageIndex + 1} / {selectedItem.galleryImages.length}
+                    {currentImageIndex + 1} / {productImages.length}
                   </div>
                 )}
               </div>
@@ -332,9 +333,9 @@ export default function Portfolio() {
               </div>
 
               {/* Thumbnail Gallery - Compact */}
-              {selectedItem.galleryImages.length > 1 && (
+              {productImages.length > 1 && (
                 <div className="flex gap-2 mb-4 overflow-x-auto pb-1">
-                  {selectedItem.galleryImages.map((item, idx) => (
+                  {productImages.map((item, idx) => (
                     <button
                       key={idx}
                       onClick={() => setCurrentImageIndex(idx)}

@@ -1,6 +1,13 @@
+"use client";
+
 import Image from 'next/image';
+import { useState } from "react";
 
 export default function Services() {
+  const [nama, setNama] = useState("");
+  const [email, setEmail] = useState("");
+  const [pesan, setPesan] = useState("");
+
   const services = [
     {
       id: 1,
@@ -19,6 +26,22 @@ export default function Services() {
     }
   ];
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!nama.trim() || !email.trim() || !pesan.trim()) {
+      alert("Semua field wajib diisi!");
+      return;
+    }
+
+    const message = `Halo, saya *${nama}* (${email}).\n\n${pesan}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappNumber = "6285777557575";
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <div className="min-h-screen">
       {/* Our Service Section */}
@@ -26,9 +49,9 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-black mb-2">Our Services</h2>
           <div className="w-24 h-1 bg-black mx-auto mb-10 rounded-full"></div>
-          <div className="flex space-x-6 justify-center">
+          <div className="flex space-x-6 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth md:justify-center -mx-4 px-4">
             {services.map((service) => (
-              <div key={service.id} className="min-w-[220px] bg-white rounded-xl shadow p-6 flex flex-col items-center">
+              <div key={service.id} className="min-w-[220px] flex-shrink-0 snap-start bg-white rounded-xl shadow p-6 flex flex-col items-center">
                 <Image 
                   src={service.image} 
                   alt={service.name} 
@@ -85,12 +108,35 @@ export default function Services() {
           {/* Kanan: Contact Form */}
           <div>
             <h3 className="text-lg md:text-xl font-bold text-black mb-4">CONTACT FORM</h3>
-            <p className="mb-4 text-black">Isi form dibawah ini untuk menghubungi admin via email.</p>
-            <form className="space-y-4">
-              <input type="text" placeholder="Nama Anda (Wajib)...." className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none" />
-              <input type="email" placeholder="Email Anda (Wajib)...." className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none" />
-              <textarea rows={4} placeholder="Pesan (Wajib)...." className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none"></textarea>
-              <button type="submit" className="px-6 py-2 bg-black text-white rounded-full font-bold hover:bg-[#232323] transition">Send</button>
+            <p className="mb-4 text-black">Isi form dibawah ini untuk menghubungi admin via WhatsApp.</p>
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Nama Anda (Wajib)...."
+                value={nama}
+                onChange={(e) => setNama(e.target.value)}
+                className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none"
+              />
+              <input
+                type="email"
+                placeholder="Email Anda (Wajib)...."
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none"
+              />
+              <textarea
+                rows={4}
+                placeholder="Pesan (Wajib)...."
+                value={pesan}
+                onChange={(e) => setPesan(e.target.value)}
+                className="w-full px-4 py-2 rounded bg-[#EEE8D0] text-black placeholder-black/60 focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="px-6 py-2 bg-black text-white rounded-full font-bold hover:bg-[#232323] transition"
+              >
+                Send
+              </button>
             </form>
           </div>
         </div>
