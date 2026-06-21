@@ -41,6 +41,66 @@ export default function Portfolio() {
         {
           image: "/assets/img/product/chmbpants2.jpeg",
           description: "Detail belakang CHMB Pants dengan aksen star patch di kedua saku, finishing premium dan jahitan rapi."
+        },
+        {
+          image: "/assets/img/product/chmbpants3.webp",
+          description: "CHMB Pants tampilan keseluruhan, memperlihatkan siluet baggy yang khas dengan proporsi modern dan nyaman dipakai."
+        },
+        {
+          image: "/assets/img/product/chmbpants4.webp",
+          description: "Detail konstruksi CHMB Pants, jahitan presisi dan material premium yang memastikan daya tahan jangka panjang."
+        },
+        {
+          image: "/assets/img/product/chmbpants5.webp",
+          description: "CHMB Pants dari sudut berbeda, menampilkan detail pocket dan finishing yang rapi dengan karakter streetwear kuat."
+        },
+        {
+          image: "/assets/img/product/chmbpants6.webp",
+          description: "Koleksi terbaru CHMB dengan sentuhan kontemporer, cocok untuk berbagai occasion dari casual hingga semi-formal."
+        },
+        {
+          image: "/assets/img/product/chmbpants7.jpeg",
+          description: "CHMB Pants edisi spesial dengan detail unik yang mencerminkan identitas brand streetwear contemporary."
+        },
+        {
+          image: "/assets/img/product/chmbpants8.jpeg",
+          description: "Tampilan close-up material CHMB Pants, tekstur denim premium dengan finishing berkualitas tinggi."
+        },
+        {
+          image: "/assets/img/product/chmbpants9.jpeg",
+          description: "CHMB Pants dengan cutting relaxed fit yang memberikan kenyamanan maksimal untuk aktivitas sehari-hari."
+        },
+        {
+          image: "/assets/img/product/chmbpants10.jpeg",
+          description: "Detail aksen dan patch CHMB yang menjadi signature look dari koleksi ini, bold namun tetap elegan."
+        },
+        {
+          image: "/assets/img/product/chmbpants11.jpeg",
+          description: "CHMB Pants dipadukan dengan berbagai gaya, versatile dan cocok untuk berbagai kesempatan."
+        },
+        {
+          image: "/assets/img/product/chmbpants12.jpeg",
+          description: "Sudut pandang full-length CHMB Pants memperlihatkan proporsi dan siluet yang sempurna."
+        },
+        {
+          image: "/assets/img/product/chmbpants13.jpeg",
+          description: "Detail waistband dan konstruksi CHMB Pants dengan jahitan presisi dan material tahan lama."
+        },
+        {
+          image: "/assets/img/product/chmbpants14.jpeg",
+          description: "CHMB Pants dari koleksi terbaru, memadukan estetika streetwear dengan kualitas produksi premium."
+        },
+        {
+          image: "/assets/img/product/chmbpants15.jpeg",
+          description: "Tampilan keseluruhan CHMB Pants dengan lighting natural, memperlihatkan warna dan tekstur asli material."
+        },
+        {
+          image: "/assets/img/product/chmbpants16.jpeg",
+          description: "CHMB Pants detail bagian kaki, cut dan hem yang rapi dengan finishing berkelas."
+        },
+        {
+          image: "/assets/img/product/chmbpants17.jpeg",
+          description: "Koleksi lengkap CHMB Pants, setiap piece dibuat dengan standar kualitas tinggi untuk local brand yang ingin tampil beda."
         }
       ]
     },
@@ -93,6 +153,28 @@ export default function Portfolio() {
         {
           image: "/assets/img/product/lamerencej2.jpeg",
           description: "Detail finishing jorts dengan washing effect yang natural, menambah karakter vintage pada produk."
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: "MAISON MONTAIRE",
+      image: "/assets/img/product/maisonlogo.jpeg",
+      description: "Koleksi premium dengan estetika Parisian yang elegan. Maison Montaire menghadirkan potongan yang sophisticated dan material pilihan untuk tampilan yang timeless.",
+      category: "Premium Fashion",
+      year: "2024",
+      galleryImages: [
+        {
+          image: "/assets/img/product/maisonlogo.jpeg",
+          description: "Logo Maison Montaire yang sophisticated, mencerminkan brand identity premium dengan sentuhan Parisian yang kuat."
+        },
+        {
+          image: "/assets/img/product/maisonpants1.jpeg",
+          description: "Maison Montaire Pants dengan potongan premium, material pilihan berkualitas tinggi dengan finishing yang sempurna dan elegan."
+        },
+        {
+          image: "/assets/img/product/maisonpants2.jpeg",
+          description: "Detail konstruksi Maison Montaire Pants, jahitan presisi dan silhouette yang timeless cocok untuk berbagai kesempatan."
         }
       ]
     }
