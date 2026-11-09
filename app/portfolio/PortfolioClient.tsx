@@ -4,181 +4,23 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-interface PortfolioItem {
-  id: number;
+export interface PortfolioItem {
+  id: string;
   title: string;
   image: string;
   description: string;
   category: string;
   year: string;
+  whatsapp: string;
   galleryImages: {
     image: string;
     description: string;
   }[];
 }
 
-export default function Portfolio() {
+export default function PortfolioClient({ portfolioItems }: { portfolioItems: PortfolioItem[] }) {
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const portfolioItems: PortfolioItem[] = [
-    {
-      id: 1,
-      title: "CHMB",
-      image: "/assets/img/product/chmblogo.jpg",
-      description: "Koleksi workwear dengan sentuhan streetwear contemporary. CHMB menghadirkan gaya kasual yang tetap profesional, cocok untuk berbagai occasion dan environment.",
-      category: "Contemporary Casual",
-      year: "2024",
-      galleryImages: [
-        {
-          image: "/assets/img/product/chmblogo.jpg",
-          description: "Logo CHMB dengan aesthetic streetwear modern, perfect balance antara casual dan professional look."
-        },
-        {
-          image: "/assets/img/product/chmbpants1.jpeg",
-          description: "CHMB Baggy Pants dengan logo khas di bagian depan, material denim berkualitas tinggi dengan cutting relaxed fit."
-        },
-        {
-          image: "/assets/img/product/chmbpants2.jpeg",
-          description: "Detail belakang CHMB Pants dengan aksen star patch di kedua saku, finishing premium dan jahitan rapi."
-        },
-        {
-          image: "/assets/img/product/chmbpants3.webp",
-          description: "CHMB Pants tampilan keseluruhan, memperlihatkan siluet baggy yang khas dengan proporsi modern dan nyaman dipakai."
-        },
-        {
-          image: "/assets/img/product/chmbpants4.webp",
-          description: "Detail konstruksi CHMB Pants, jahitan presisi dan material premium yang memastikan daya tahan jangka panjang."
-        },
-        {
-          image: "/assets/img/product/chmbpants5.webp",
-          description: "CHMB Pants dari sudut berbeda, menampilkan detail pocket dan finishing yang rapi dengan karakter streetwear kuat."
-        },
-        {
-          image: "/assets/img/product/chmbpants6.webp",
-          description: "Koleksi terbaru CHMB dengan sentuhan kontemporer, cocok untuk berbagai occasion dari casual hingga semi-formal."
-        },
-        {
-          image: "/assets/img/product/chmbpants7.jpeg",
-          description: "CHMB Pants edisi spesial dengan detail unik yang mencerminkan identitas brand streetwear contemporary."
-        },
-        {
-          image: "/assets/img/product/chmbpants8.jpeg",
-          description: "Tampilan close-up material CHMB Pants, tekstur denim premium dengan finishing berkualitas tinggi."
-        },
-        {
-          image: "/assets/img/product/chmbpants9.jpeg",
-          description: "CHMB Pants dengan cutting relaxed fit yang memberikan kenyamanan maksimal untuk aktivitas sehari-hari."
-        },
-        {
-          image: "/assets/img/product/chmbpants10.jpeg",
-          description: "Detail aksen dan patch CHMB yang menjadi signature look dari koleksi ini, bold namun tetap elegan."
-        },
-        {
-          image: "/assets/img/product/chmbpants11.jpeg",
-          description: "CHMB Pants dipadukan dengan berbagai gaya, versatile dan cocok untuk berbagai kesempatan."
-        },
-        {
-          image: "/assets/img/product/chmbpants12.jpeg",
-          description: "Sudut pandang full-length CHMB Pants memperlihatkan proporsi dan siluet yang sempurna."
-        },
-        {
-          image: "/assets/img/product/chmbpants13.jpeg",
-          description: "Detail waistband dan konstruksi CHMB Pants dengan jahitan presisi dan material tahan lama."
-        },
-        {
-          image: "/assets/img/product/chmbpants14.jpeg",
-          description: "CHMB Pants dari koleksi terbaru, memadukan estetika streetwear dengan kualitas produksi premium."
-        },
-        {
-          image: "/assets/img/product/chmbpants15.jpeg",
-          description: "Tampilan keseluruhan CHMB Pants dengan lighting natural, memperlihatkan warna dan tekstur asli material."
-        },
-        {
-          image: "/assets/img/product/chmbpants16.jpeg",
-          description: "CHMB Pants detail bagian kaki, cut dan hem yang rapi dengan finishing berkelas."
-        },
-        {
-          image: "/assets/img/product/chmbpants17.jpeg",
-          description: "Koleksi lengkap CHMB Pants, setiap piece dibuat dengan standar kualitas tinggi untuk local brand yang ingin tampil beda."
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: "SOULEVE",
-      image: "/assets/img/product/soulevelogo.jpg",
-      description: "Brand workwear yang mengedepankan kenyamanan dan durabilitas. SOULEVE dirancang khusus untuk aktivitas outdoor dan heavy duty dengan standar kualitas internasional.",
-      category: "Outdoor & Heavy Duty",
-      year: "2024",
-      galleryImages: [
-        {
-          image: "/assets/img/product/soulevelogo.jpg",
-          description: "Logo SOULEVE yang bold dan berani, mencerminkan spirit adventure dan ketahanan maksimal untuk outdoor activities."
-        },
-        {
-          image: "/assets/img/product/soulevebsh.jpg",
-          description: "Board Short SOULEVE dengan quick-dry material, ideal untuk aktivitas water sports dan beach activities."
-        },
-        {
-          image: "/assets/img/product/soulevebs.jpg",
-          description: "Detail board short dengan drawstring elastic waist dan side pocket waterproof untuk penyimpanan aman."
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "LAMERENCE",
-      image: "/assets/img/product/lamerencelogo.jpg",
-      description: "Koleksi premium workwear dengan desain modern dan material berkualitas tinggi. LAMERENCE menghadirkan kombinasi sempurna antara style dan functionality untuk kebutuhan profesional Anda.",
-      category: "Premium Workwear",
-      year: "2024",
-      galleryImages: [
-        {
-          image: "/assets/img/product/lamerencelogo.jpg",
-          description: "Logo LAMERENCE dengan desain minimalis yang mencerminkan brand identity yang kuat dan profesional."
-        },
-        {
-          image: "/assets/img/product/lamerenceb.jpeg",
-          description: "Baggy Pants LAMERENCE dengan material premium, nyaman dipakai seharian dengan detail stitching yang rapi."
-        },
-        {
-          image: "/assets/img/product/lamerenceb2.jpeg",
-          description: "Detail baggy pants dengan pocket fungsional dan aksen logo yang subtle namun tetap terlihat elegan."
-        },
-        {
-          image: "/assets/img/product/lamerencej.jpeg",
-          description: "Jorts Pants LAMERENCE perfect untuk casual outing, kombinasi denim berkualitas dengan cutting modern."
-        },
-        {
-          image: "/assets/img/product/lamerencej2.jpeg",
-          description: "Detail finishing jorts dengan washing effect yang natural, menambah karakter vintage pada produk."
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "MAISON MONTAIRE",
-      image: "/assets/img/product/maisonlogo.jpeg",
-      description: "Koleksi premium dengan estetika Parisian yang elegan. Maison Montaire menghadirkan potongan yang sophisticated dan material pilihan untuk tampilan yang timeless.",
-      category: "Premium Fashion",
-      year: "2024",
-      galleryImages: [
-        {
-          image: "/assets/img/product/maisonlogo.jpeg",
-          description: "Logo Maison Montaire yang sophisticated, mencerminkan brand identity premium dengan sentuhan Parisian yang kuat."
-        },
-        {
-          image: "/assets/img/product/maisonpants1.jpeg",
-          description: "Maison Montaire Pants dengan potongan premium, material pilihan berkualitas tinggi dengan finishing yang sempurna dan elegan."
-        },
-        {
-          image: "/assets/img/product/maisonpants2.jpeg",
-          description: "Detail konstruksi Maison Montaire Pants, jahitan presisi dan silhouette yang timeless cocok untuk berbagai kesempatan."
-        }
-      ]
-    }
-  ];
 
   // Close modal on Escape key
   useEffect(() => {
@@ -201,10 +43,8 @@ export default function Portfolio() {
     }
   }, [selectedItem]);
 
-  // productImages excludes the logo (index 0) — used inside modal
-  const productImages = selectedItem
-    ? selectedItem.galleryImages.slice(1)
-    : [];
+  // productImages = product photos only (logo is stored separately)
+  const productImages = selectedItem ? selectedItem.galleryImages : [];
 
   const handleNext = () => {
     setCurrentImageIndex((prev) =>
@@ -294,7 +134,7 @@ export default function Portfolio() {
 
       {/* Modal Popup */}
       <AnimatePresence>
-        {selectedItem && (
+        {selectedItem && productImages.length > 0 && (
           <motion.div 
             className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
@@ -409,7 +249,7 @@ export default function Portfolio() {
                     transition={{ duration: 0.3 }}
                     className="text-gray-700 leading-relaxed text-sm"
                   >
-                    {selectedItem.galleryImages[currentImageIndex].description}
+                    {productImages[currentImageIndex]?.description}
                   </motion.p>
                 </AnimatePresence>
               </div>
@@ -440,7 +280,7 @@ export default function Portfolio() {
               {/* Contact Button - Compact */}
               <div className="pt-4 border-t border-gray-200">
                 <motion.a
-                  href="https://wa.me/6285777557575"
+                  href={`https://wa.me/${selectedItem.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2 bg-black text-white rounded-full font-semibold text-sm hover:bg-gray-800 transition w-full justify-center"
